@@ -3,9 +3,15 @@
 Hereby we present a list of awesome resources and blogs on topics related to Unum!
 Suggested for everyone wishing to join the team!
 
+## Learning Python
+
+## Learning C++
+
 ## Data Structures
 
 * [Algorithms for Competitive Programming](https://cp-algorithms.com/#data-structures) blog
+
+## Data Science
 
 ## Benchmarking
 
