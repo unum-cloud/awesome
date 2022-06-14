@@ -11,14 +11,15 @@ Suggested for everyone wishing to join the team!
 ## Learning Python
 
 * :octocat: [What the f\*ck Python!](https://github.com/satwikkansal/wtfpython): Exploring and understanding Python through surprising snippets.
-* :tv: [https://www.youtube.com/c/mCodingWithJamesMurphy](mCoding with James Murphy)
+* :tv: [mCoding with James Murphy](https://www.youtube.com/c/mCodingWithJamesMurphy)
 
 ## Learning C++
+
+* :tv: 🇷🇺 [MIPT Course in Basic C++](https://youtube.com/playlist?list=PL3BR09unfgciJ1_K_E914nohpiOiHnpsK)
 
 ## Data Structures
 
 * 📜 [Algorithms for Competitive Programming](https://cp-algorithms.com/#data-structures) blog
-* :tv: 🇷🇺 [MIPT Course in Basic C++](https://youtube.com/playlist?list=PL3BR09unfgciJ1_K_E914nohpiOiHnpsK)
 
 ## Data Science
 
