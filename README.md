@@ -6,12 +6,14 @@ Suggested for everyone wishing to join the team!
 * :octocat: means source code
 * :tv: means video channels
 * :scroll: means textual blogs
+* 📖 means complete books
 * 🇷🇺 implies content is in Russian
 
 ## Learning Python
 
-* :octocat: [What the f\*ck Python!](https://github.com/satwikkansal/wtfpython): Exploring and understanding Python through surprising snippets.
-* :tv: [mCoding with James Murphy](https://www.youtube.com/c/mCodingWithJamesMurphy)
+* :octocat: [WTF Python](https://github.com/satwikkansal/wtfpython): Understanding Python through surprising snippets..
+* :tv: [mCoding](https://www.youtube.com/c/mCodingWithJamesMurphy) by James Murphy.
+* 📖 [Python Design Patterns](https://python-patterns.guide/) by Brandon Rhodes.
 
 ## Learning C++
 
