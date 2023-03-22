@@ -5,8 +5,8 @@ Here is our structure for organizing software development.
 
 1. If you want to add/edit/remove code, first, open an issue.
 2. Every issue, has gets it's own branch in the same repo, generally forked from `main-dev`.
-   1. If you want your every commit displayed and discussed, push right there.
-   2. If you want to work on something privately, fork it under your own username.
+  1. If you want your every commit displayed and discussed, push right there.
+  2. If you want to work on something privately, fork it under your own username.
 3. For your Pull Request to pass a review, submit not just the code, but also the tests, and the documentation.
 
 Sounds simple.
@@ -83,16 +83,30 @@ Currently with the following rules:
 
 ## Commits
 
-- Title should continue the sentence: This commit will ...
-- Title line should be 50 characters or less.
-- Title needs no sentence termination punctuation marks.
-- Before title you should put a [commit type](#commit-types).
-- Descriptions are optional. If present should be 72 characters or less.
+- Subject (top) line is up to 50 characters.
+  - Should continue the sentence: "This commit will ...".
+  - Shouldn't end with a period.
+  - Must start with a ["verb"](#commit-verbs) or "type".
+  - May mark the programming language in broad projects.
+- Description lines are optional and limited to 72 characters.
+  - Use the body to explain what and why vs. how. Code already answers the latter.
+  - If relevant, reference the issue at the end, using the hashtag notation.
+- If a commit can't be described with a single verb, it should be split into parts.
 
-As a result, the commit message would look like this.
+The template would be:
 
 ```txt
-Fix: Short (50 chars or less) summary
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+An example would be:
+
+```txt
+Fix[Py]: Short (50 chars or less) summary
 
 More detailed explanatory text. Wrap it to 72 characters. The blank
 line separating the summary from the body is critical (unless you omit
@@ -109,12 +123,67 @@ Further paragraphs come after blank lines.
   single space. Use a hanging indent.
 ```
 
-### Commit Types
+### Commit Verbs
 
-## Versioning
+We agree on a short list of leading active verbs for the subject line:
+
+- Add = Create a capability e.g. feature, test, dependency.
+- Cut = Remove a capability e.g. feature, test, dependency.
+- Fix = Fix an issue e.g. bug, typo, accident, misstatement.
+- Make = Change the build process, dependencies, versions, or tooling.
+- Refactor = A code change that MUST be just a refactoring.
+- Form = Refactor of formatting, e.g. omit whitespace.
+- Perf = Refactor of performance, e.g. speed up code.
+- Docs = Refactor of documentation or spelling, e.g. help files.
+
+Which is a well known and widely adopted set.
+
+###  Why Use Conventional Commits?
+
+- Automatically generating CHANGELOGs.
+- Automatically determining a semantic version bump (based on the types of commits landed).
+- Communicating the nature of changes to teammates, the public, and other stakeholders.
+- Triggering build and publish processes.
+- Making it easier for people to contribute to your projects, by allowing them to explore a more structured commit history.
+
+> [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+
+## Automated Semantic Versioning
 
 - Every repo has a root level `VERSION` file.
 - Contents are `major.minor.patch` followed by newline.
+- CI tools will atu
 
-We use a variation of Semantic Versioning.
+We use a variation of **[Semantic Versioning](https://semver.org/)**.
 The only difference being, that we sometimes prefer to use the depth of the Git branch as the `patch` number.
+
+## Libraries and Dependencies
+
+- Check that your [licenses](#licensing) are compatible.
+- Prefer dependencies, that are actively maintained, tested, and documented.
+- Prefer projects using the same build system.
+
+Choosing dependencies is much harder than it seems.
+Those rules can be skipped or bended.
+For example, many teams may not consider using projects with less than 1'000 stars on GitHub.
+Yet some of the [cleanest](https://github.com/pierresegonne/funky-attractors) and coolest repositories I have seen, have exactly **zero** stars.
+Being cautious is a good baselines, but if you want to be competitive, you have to take risks.
+
+## Licensing
+
+- Permissive: MIT, BSD, **Apache** = "don't sue the author".
+- "Copyleft" licenses: GPL, AGPL, LGPL = "preserve authorship attribution".
+- Public Domain, CC0, Unlicense = "do anything".
+- Creative Commons = for hardware guys.
+
+We prefer **[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)**.
+That is not compatible with the GPL licenses.
+So unless a GPL-licensed project is an **optional** add-on, our projects can't include it.
+
+> [A dev’s guide to open source software licensing](https://github.com/readme/guides/open-source-licensing) by GitHub.
+> [Software Licenses in Plain English](https://www.tldrlegal.com/).
+
+## Code
+
+- No trailing whitespaces.
+- Every file must end with newline.
