@@ -86,7 +86,7 @@ Currently with the following rules:
 - Subject (top) line is up to 50 characters.
   - Should continue the sentence: "This commit will ...".
   - Shouldn't end with a period.
-  - Must start with a ["verb"](#commit-verbs) or "type".
+  - Must start with a ["verb"](#commit-verbs) or "type" or "tag".
   - May mark the programming language in broad projects.
 - Description lines are optional and limited to 72 characters.
   - Use the body to explain what and why vs. how. Code already answers the latter.
@@ -96,7 +96,7 @@ Currently with the following rules:
 The template would be:
 
 ```txt
-<type>[optional scope]: <description>
+<type>: <description>
 
 [optional body]
 
@@ -106,7 +106,7 @@ The template would be:
 An example would be:
 
 ```txt
-Fix[Py]: Short (50 chars or less) summary
+Fix: Short (50 chars or less) summary
 
 More detailed explanatory text. Wrap it to 72 characters. The blank
 line separating the summary from the body is critical (unless you omit
@@ -125,18 +125,25 @@ Further paragraphs come after blank lines.
 
 ### Commit Verbs
 
-We agree on a short list of leading active verbs for the subject line:
+We agree on a short list of leading active verbs for the subject line, similar to the [ESLint convention](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-eslint). 
 
-- Add = Create a capability e.g. feature, test, dependency.
-- Cut = Remove a capability e.g. feature, test, dependency.
-- Fix = Fix an issue e.g. bug, typo, accident, misstatement.
-- Make = Change the build process, dependencies, versions, or tooling.
-- Refactor = A code change that MUST be just a refactoring.
-- Form = Refactor of formatting, e.g. omit whitespace.
-- Perf = Refactor of performance, e.g. speed up code.
-- Docs = Refactor of documentation or spelling, e.g. help files.
+| Verbs    |  Part   | When?                                |
+| :------- | :-----: | :----------------------------------- |
+| Refactor |    -    | Non-user facing changes              |
+| Test     |    -    | Updates **only** to tests            |
+| Docs     |    -    | Updates **only** to documentation    |
+| Build    |    -    | Compilation fixes                    |
+|          |         |                                      |
+| Make     | `patch` | New compilation settings, or configs |
+| Fix      | `patch` | Bug fixes                            |
+| Improve  | `patch` | Small enhancement                    |
+| Upgrade  | `patch` | Updating a dependency version        |
+|          |         |                                      |
+| Add      | `minor` | New feature                          |
+|          |         |                                      |
+| Breaking | `major` | Backwards-incompatible update        |
 
-Which is a well known and widely adopted set.
+Which is a well known, widely adopted set, and self-explanatory set.
 
 ###  Why Use Conventional Commits?
 
@@ -146,16 +153,16 @@ Which is a well known and widely adopted set.
 - Triggering build and publish processes.
 - Making it easier for people to contribute to your projects, by allowing them to explore a more structured commit history.
 
-> [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
 ## Automated Semantic Versioning
 
 - Every repo has a root level `VERSION` file.
 - Contents are `major.minor.patch` followed by newline.
-- CI tools will atu
+- CI tools will automatically generate a `CHANGELOG.md` and release notes.
 
 We use a variation of **[Semantic Versioning](https://semver.org/)**.
-The only difference being, that we sometimes prefer to use the depth of the Git branch as the `patch` number.
+
+> [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
 ## Libraries and Dependencies
 
