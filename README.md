@@ -14,6 +14,7 @@ Suggested for everyone wishing to join the core Unum team or contribute to our O
 * :octocat: [WTF Python](https://github.com/satwikkansal/wtfpython): Understanding Python through surprising snippets..
 * :tv: [mCoding](https://www.youtube.com/c/mCodingWithJamesMurphy) by James Murphy.
 * 📖 [Python Design Patterns](https://python-patterns.guide/) by Brandon Rhodes.
+* :scroll: [Lesser known parts of Python standard library](https://www.trickster.dev/post/lesser-known-parts-of-python-standard-library/) by "Trickster Dev".
 
 If you want to contribute to our projects, please check our [Python Coding Guidelines](/GuidePython).
 
